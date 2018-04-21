@@ -15,6 +15,20 @@ class Blockchain{
     this.blocks.push(block);
   }
 
+  transactionsByDriverLicenseNumber(num) {
+    num = sha256(num);
+    let result = [];
+    this.blocks.forEach(block=>{
+      block.body.forEach(t=>{
+        if(num == t.driverLicenseNumber){
+          console.log(num);
+          result.push(t);
+        }
+      })
+    })
+    return result;
+  }
+
   generateNextBlock(body){
     let block = new Block();
 
@@ -36,7 +50,7 @@ class Blockchain{
 
   mineHash(block){
     let hash = sha256(block.key);
-    while(!hash.startsWith('aaa')){
+    while(!hash.startsWith('00')){
       block.nonce += 1
       hash = sha256(block.key)
       console.log(hash)

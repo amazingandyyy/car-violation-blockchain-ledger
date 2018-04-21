@@ -33,11 +33,16 @@ router.post('/body', (req, res)=>{
 
   const {driverLicenseNumber, voilationDate, voilationType} = req.body;
   let transaction = new Transaction(sha256(driverLicenseNumber) , voilationDate ,voilationType)
-  
-  drivingRecordSmartContract.apply(transaction, blockchain.blocks);
+  drivingRecordSmartContract.apply(transaction, blockchain.blocks, body);
   
   body.push(transaction);
   res.json(body);
+})
+
+router.get('/records/:drivingLicenseNumber', (req, res)=>{
+  let { drivingLicenseNumber } = req.params;
+  let transaction = blockchain.transactionsByDriverLicenseNumber(drivingLicenseNumber);
+  res.json(transaction);
 })
 
 router.get('/nodes/resolve', (req, res)=>{
