@@ -34,7 +34,7 @@ POST /blockchain/records/:licenseNumber // get record of the given license Numbe
 ```
 
 ### There are many can be done: 
-Please feel free to [fork](https://github.com/amazingandyyy/car-violation-blockchain-ledger #fork-destination-box), clone or send me [PR](https://github.com/amazingandyyy/car-violation-blockchain-ledger /pulls)
+Please feel free to [fork](https://github.com/amazingandyyy/car-violation-blockchain-ledger#fork-destination-box), clone or send me [PR](https://github.com/amazingandyyy/car-violation-blockchain-ledger/pulls)
 
 ### Author 
 Andy Chen([amazingandyyy](https://github.com/amazingandyyy))
