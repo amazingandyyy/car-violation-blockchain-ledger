@@ -1,23 +1,6 @@
 # car-violation-blockchain-ledger [![Build Status](https://travis-ci.org/amazingandyyy/car-violation-blockchain-ledger.svg?branch=master)](https://travis-ci.org/amazingandyyy/car-violation-blockchain-ledger )
 
-This is an afternoon-project, a blockchain built in node, supporting PoW.
-
-### Why Node
-Node itself is a more beautiful, flexible and powerful language for internet project, again, I want to show my love to js.
-
-### Why a Blockchain from scratch
-When it comes to blockchain, most developers only learn **how to do Dapp** with ethereum, neo, or other existing infrastructure-completed project... They are fine, but using them will only let you know what you can do with them, as a result, you cannot really get the idea what you can do with blockchain itself, and what you can apply the blockchain mindset to other software projects. I think there is a better way to understand blockchain itself - to build a chain from scratch
-
-## This is a lovely demo for 
-- A general Idea of how Blocks, Chain, Mining, Nodes, Transaction work with each others.
-- How to do them in Node
-- How to resolve basic conflicts in blockchain
-- How to use sha256 to do PoW(Proof of Work)
-- Not a demo for
-  - signatures
-  - address
-  - production setup
-  - making you a blockchain expert
+A Public Blockchain that can tracking car violation history.
 
 ## Run it on your machine
 ```
@@ -37,26 +20,21 @@ $ npm run nodes 3002 // listening on port 3002
 GET /blockchain // see the link-list itself
 POST /blockchain/mine // find the next special hash
 POST /blockchain/body // add new data to the chain 
+body {
+	"driverLicenseNumber": "DD1234",
+	"voilationDate": "04/29/2018",
+	"voilationType": "Speeding"
+}
 
 GET /blockchain/nodes // get a list of all nodes
 GET /blockchain/nodes/resolve // fetch the longest chain
 POST /blockchain/nodes/register // add nodes urls
+
+POST /blockchain/records/:licenseNumber // get record of the given license Number
 ```
 
 ### There are many can be done: 
 Please feel free to [fork](https://github.com/amazingandyyy/car-violation-blockchain-ledger #fork-destination-box), clone or send me [PR](https://github.com/amazingandyyy/car-violation-blockchain-ledger /pulls)
-
-
-- use `socket` instead of http, to broadcast state
-- implement signature, public key, private key, user address system
-- proof of work and rewarding system
-- new PoW algorithm
-- location based sharding?
-- hide IPs / make it private!?
-- PoS, or other dBFT methods
-- dockernized, easy to run a node
-- interactive wrappers, helper libraries(python, golang, java)...
-
 
 ### Author 
 Andy Chen([amazingandyyy](https://github.com/amazingandyyy))
