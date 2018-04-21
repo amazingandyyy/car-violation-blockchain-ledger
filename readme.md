@@ -1,4 +1,4 @@
-# blockchain-in-node [![Build Status](https://travis-ci.org/amazingandyyy/blockchain-in-node.svg?branch=master)](https://travis-ci.org/amazingandyyy/blockchain-in-node)
+# car-violation-blockchain-ledger [![Build Status](https://travis-ci.org/amazingandyyy/car-violation-blockchain-ledger.svg?branch=master)](https://travis-ci.org/amazingandyyy/car-violation-blockchain-ledger )
 
 This is an afternoon-project, a blockchain built in node, supporting PoW.
 
@@ -44,7 +44,7 @@ POST /blockchain/nodes/register // add nodes urls
 ```
 
 ### There are many can be done: 
-Please feel free to [fork](https://github.com/amazingandyyy/blockchain-in-node#fork-destination-box), clone or send me [PR](https://github.com/amazingandyyy/blockchain-in-node/pulls)
+Please feel free to [fork](https://github.com/amazingandyyy/car-violation-blockchain-ledger #fork-destination-box), clone or send me [PR](https://github.com/amazingandyyy/car-violation-blockchain-ledger /pulls)
 
 
 - use `socket` instead of http, to broadcast state

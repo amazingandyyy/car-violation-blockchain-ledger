@@ -1,5 +1,5 @@
 {
-  "name": "project-in-blockchain-in-node",
+  "name": "car-violation-blockchain-ledger",
   "version": "0.0.1",
   "description": "A project built on my own blockchain-in-node codebase.",
   "main": "server.js",
