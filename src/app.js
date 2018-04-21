@@ -1,5 +1,5 @@
 import express from 'express';
-import blockchain from './ledger/router';
+import blockchain from './blockchain/router';
 import bodyParser from 'body-parser';
 
 const app = express();

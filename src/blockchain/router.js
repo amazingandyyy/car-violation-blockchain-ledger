@@ -1,8 +1,12 @@
 import fetch from 'node-fetch';
+import sha256 from 'js-sha256';
+
 import Transaction from './transaction';
 import Blockchain from './blockchain';
 import genesisBlock from './genesisBlock';
 import BlockchainNode from './blockchainNode';
+
+import DrivingRecordSmartContract from './smartContracts';
 
 const router = require('express').Router();
 
@@ -25,8 +29,13 @@ router.post('/mine', (req, res)=>{
 })
 
 router.post('/body', (req, res)=>{
-  const {from, to, amount} = req.body;
-  let transaction = new Transaction(from , to ,amount)
+  let drivingRecordSmartContract = new DrivingRecordSmartContract();
+
+  const {driverLicenseNumber, voilationDate, voilationType} = req.body;
+  let transaction = new Transaction(sha256(driverLicenseNumber) , voilationDate ,voilationType)
+  
+  drivingRecordSmartContract.apply(transaction, blockchain.blocks);
+  
   body.push(transaction);
   res.json(body);
 })
