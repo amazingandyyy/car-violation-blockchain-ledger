@@ -1,7 +1,5 @@
-class BlockchainNode {
+export default class {
   constructor(url){
     this.url = url;
   }
 }
-
-export default BlockchainNode;

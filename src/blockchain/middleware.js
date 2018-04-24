@@ -1,4 +1,4 @@
-export default class DrivingRecordSmartContract {
+export default class {
   apply(transaction, blocks, body) {
     // go through all blocks
       blocks.forEach(block => {

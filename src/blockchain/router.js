@@ -6,7 +6,7 @@ import Blockchain from './blockchain';
 import genesisBlock from './genesisBlock';
 import BlockchainNode from './blockchainNode';
 
-import DrivingRecordSmartContract from './smartContracts';
+import Middleware from './middleware';
 
 const router = require('express').Router();
 
@@ -29,11 +29,11 @@ router.post('/mine', (req, res)=>{
 })
 
 router.post('/body', (req, res)=>{
-  let drivingRecordSmartContract = new DrivingRecordSmartContract();
+  let middleware = new Middleware();
 
   const {driverLicenseNumber, voilationDate, voilationType} = req.body;
   let transaction = new Transaction(sha256(driverLicenseNumber) , voilationDate ,voilationType)
-  drivingRecordSmartContract.apply(transaction, blockchain.blocks, body);
+  middleware.apply(transaction, blockchain.blocks, body);
   
   body.push(transaction);
   res.json(body);
