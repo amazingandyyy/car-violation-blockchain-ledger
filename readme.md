@@ -1,6 +1,6 @@
 # car-violation-blockchain-ledger [![Build Status](https://travis-ci.org/amazingandyyy/car-violation-blockchain-ledger.svg?branch=master)](https://travis-ci.org/amazingandyyy/car-violation-blockchain-ledger )
 
-A Public Blockchain that can tracking car violation history.
+A Public Blockchain that can track car violation history.
 
 ## Run it on your machine
 ```
@@ -20,7 +20,7 @@ $ npm run nodes 3002 // listening on port 3002
 GET /blockchain // see the link-list itself
 POST /blockchain/mine // find the next special hash
 POST /blockchain/body // add new data to the chain 
-body {
+sample body {
 	"driverLicenseNumber": "DD1234",
 	"voilationDate": "04/29/2018",
 	"voilationType": "Speeding"
